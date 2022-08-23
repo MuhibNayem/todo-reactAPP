@@ -4,7 +4,7 @@
 }
 
 .container{
-  background: linear-gradient(to right bottom, #e1b382, #c89666);
+  background: linear-gradient(to right bottom, white, grey);
   width: 100%;
   min-height: 100vh;
   display: flex;
@@ -57,45 +57,54 @@
   border: 1px solid #ccc;
   border-radius: 10px;
   padding: 10px;
-  max-height: 30px;
+  max-height: 30px,
 }
 
-.button-complete
-.button-delete{
-  border: none;
-  outline: none;
-  cursor: pointer;
-  background-color: transparent;
-  font-size: 28px;
-  border-radius: 50%;
+.list-item-focus{
+  border: 2px solid red;
+}
+
+.task-input-focus{
+  border: 2px solid red;
+}
+
+.listItemSecondaryAction-hidden{
+  visibility: hidden;
 }
 
 .button-complete{
-  color: #ff6c6c;
-  margin-right: 10px;
+  color: green;
+  font-size: 15px;
+  cursor: pointer;
+  margin-left: 50px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  
 }
 .button-delete{
   color: red;
+  font-size: 15px;
+  cursor: pointer;
+  margin-left: 10px;
+  background-color: transparent;
+  border: none;
+  outline: none;
 }
 
 .complete{
   text-decoration-line: line-through;
-  text-decoration-style: solid;
-  text-decoration-color: #ff6c6c;
-  opacity: 0.5;
+  text-decoration-style: 5px solid;
+  text-decoration-color: black;
+  opacity: 0.3;
 }
 
 .list{
-  width: 220px;
+  width: auto;
+  height: auto;
   background-color: #12343b;
   border: none;
-  color: #ccc;
+  color: white;
   font-size: 20px;
-  padding: 10px;
   margin-right: 15px;
-}
-
-input:focus,
-button:focus{
-  outline: none;
 }
