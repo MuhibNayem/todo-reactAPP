@@ -15,7 +15,6 @@ const ListItem = ({input, setInput, todos, setTodos}) => {
 
     const onInputChange = (event) => {
         setInput(event.target.value);
-        setIsHovering(true)
     };
 
     const onSubmitTodo = (e) => {
@@ -30,10 +29,8 @@ const ListItem = ({input, setInput, todos, setTodos}) => {
         if (event.keyCode === 13) {
           event.preventDefault();
           event.target.blur();
-          setIsHovering(false)
         } else if (event.keyCode === 27){
             setInput("")
-            setIsHovering(false)
             event.target.blur();
         }
     };
@@ -47,6 +44,7 @@ const ListItem = ({input, setInput, todos, setTodos}) => {
                 required
                 onChange={onInputChange}
                 onKeyUp = {handleKeyUp}
+                // className = "task-input"
                 onMouseEnter = {handleMouseEntrance}
                 onMouseLeave = {handleMouseLeave}
                 className={`task-input ${ isHovering ? "task-input-focus" : ""}`}

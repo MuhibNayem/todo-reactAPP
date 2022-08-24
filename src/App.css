@@ -63,11 +63,11 @@
 }
 
 .list-item-focus{
-  border: 2px solid red;
+  border: 2px solid blue;
 }
 
 .task-input-focus{
-  border: 2px solid red;
+  border: 3px solid black 
 }
 
 .listItemSecondaryAction-hidden{
@@ -83,6 +83,12 @@
   border: none;
   outline: none;
   
+}
+.icons{
+  display: none;
+}
+.list-item:hover .icons{
+  visibility: flex;
 }
 .button-delete{
   color: red;
@@ -109,4 +115,7 @@
   color: black;
   font-size: 20px;
   margin-right: 15px;
+}
+.task-input:focus{
+  background-color: white;
 }
