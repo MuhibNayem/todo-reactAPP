@@ -59,20 +59,20 @@
   border: 1px solid white;
   border-radius: 10px;
   padding: 10px;
-  max-height: 30px,
+  max-height: 30px;
+  justify-content: space-between;
 }
 
-.list-item-focus{
+.list-item:hover{
   border: 2px solid blue;
 }
 
-.task-input-focus{
-  border: 3px solid black 
+.task-input:hover {
+  border: 3px solid black
+
 }
 
-.listItemSecondaryAction-hidden{
-  visibility: hidden;
-}
+
 
 .button-complete{
   color: green;
@@ -88,7 +88,7 @@
   display: none;
 }
 .list-item:hover .icons{
-  visibility: flex;
+  display: flex;
 }
 .button-delete{
   color: red;

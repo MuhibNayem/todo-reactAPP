@@ -1,31 +1,30 @@
-import React, {useState} from 'react';
+import React from 'react';
+
 import './App.css';
-import Header from './components/Header';
-import ListItem from './components/add_list_item';
+import Header from './components/common';
+
+import InputListItem from './components/todoInput';
 import TodoList from './components/todoList';
+import { TodoProvider } from './components/contex/todo_contex';
 
 const App = () => {
 
-  const [input, setInput] = useState("")
-  const [todos, setTodos] = useState([])
-
+  
   return (
     <div className='container'>
       <div className='app-wrapper'>
         <div>
           <Header />
         </div>
-        <div>
-          <ListItem 
-            input = {input}
-            setInput = {setInput}
-            todos = {todos}
-            setTodos = {setTodos}
-          />
-        </div>
-        <div>
-          <TodoList todos = {todos} setTodos = {setTodos} />
-        </div>
+        <TodoProvider>
+          <div>
+            <InputListItem />
+          </div>
+          
+          <div>
+            <TodoList />
+          </div>
+        </TodoProvider>
       </div>
     </div>
   );
