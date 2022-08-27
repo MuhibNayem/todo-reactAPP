@@ -4,9 +4,7 @@ export default function Reducer(
     action
   ) {
     switch (action.type) {
-      case 'add-todo': {
-        console.log(action.text)
-        console.log(action.id)
+      case 'add': {
         return [{
           id: action.id,
           text: action.text,
@@ -28,7 +26,7 @@ export default function Reducer(
         return todos.filter(t => t.id !== action.id);
       }
       default: {
-        throw Error('Unknown action: ' + action.type);
+        throw Error('action is not spacified: ' + action.type);
       }
     }
   }

@@ -1,9 +1,9 @@
 import React from "react";
-
+import { H1 } from "./headerStyled";
 const Header = () => {
     return (
         <div className="header">
-            <h1>TODO-List</h1>
+            <H1>TODO-List</H1>
         </div>
     )
 }

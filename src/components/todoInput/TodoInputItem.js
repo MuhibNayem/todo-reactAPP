@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { TodoContex } from "../contex/todo_contex";
 import { v4 as uuidv4 } from "uuid";
+import { ButtonAdd, Input } from "./todoInputStyled";
 
 const TodoInputItem = () => {
 
@@ -17,7 +18,7 @@ const TodoInputItem = () => {
     const onSubmitTodo = (e) => {
         e.preventDefault();
         dispatch({
-            type: "add-todo",
+            type: "add",
             id: uuidv4(),
             text: input,
             completed: false
@@ -37,7 +38,7 @@ const TodoInputItem = () => {
 
     return (
         <form onSubmit={onSubmitTodo}>
-            <input 
+            <Input 
                 type = "text" 
                 placeholder="Write to-do...."  
                 value={input}
@@ -47,7 +48,7 @@ const TodoInputItem = () => {
                 className = "task-input"
                 
             />
-            <button className="button-add" type="submit">Add</button>
+            <ButtonAdd className="button-add" type="submit">Add</ButtonAdd>
         </form>
     )
 }

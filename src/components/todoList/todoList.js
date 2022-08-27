@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { TodoContex } from "../contex/todo_contex";
-import SingleListItem from "./singleListItem";
+import { Icons, Li, List, Ul, ButtonComplete, ButtonDelete } from "./todoListStyled";
 
 const TodoList = () => {
     const {todos,dispatch} = useContext(TodoContex)
@@ -20,30 +20,31 @@ const TodoList = () => {
     }
 
     return (
-            <ul>
+            <Ul>
                 {todos.map((todo) => (
-                    <li
-                        className="list-item"
+                    <Li
                         key={todo.id}
                     >
-                        <div
-                            className={`list ${todo.completed ? "complete" : ""}`}
+                        <List
+                            key = {todo.id}
+                            completed = {todo.completed}
+                            //  className={`list ${todo.completed ? "complete" : ""}`}
                         >
                             {todo.text}
-                        </div>
-                        <div
+                        </List>
+                        <Icons
                             className= "icons"
                         >
-                            <button className="button-complete" onClick={() => handleDone(todo)}>
+                            <ButtonComplete completed = {todo.completed} onClick={() => handleDone(todo)}>
                                 <i className="fa-solid fa-circle-check"></i>
-                            </button>
-                            <button className="button-delete" onClick={() => handleDelete(todo)}>
+                            </ButtonComplete>
+                            <ButtonDelete onClick={() => handleDelete(todo)}>
                                 <i className="fa-solid fa-trash"></i>
-                            </button>
-                        </div>
-                    </li>
+                            </ButtonDelete>
+                        </Icons>
+                    </Li>
                 ))}
-            </ul> 
+            </Ul> 
         
     );
 };
